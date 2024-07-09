@@ -1,0 +1,33 @@
+:root {
+  font-family: Roboto, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.button.MuiButton-root:hover {
+  background-color: rgba(247, 87, 66, 1);
+  color: #fff;
+}
+
+.MuiSvgIcon-root {
+  color: rgba(247, 87, 66, 1);
+}
+
+.MuiInputBase-root.MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(247, 87, 66, 0.5);
+}
+
+.MuiFormLabel-root.MuiInputLabel-root.Mui-focused {
+  color: rgba(247, 87, 66, 0.5);
+}
+
+.MuiFormControlLabel-root .MuiFormControlLabel-label {
+  color: gray;
+}
