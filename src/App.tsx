@@ -1,11 +1,16 @@
-import { Auth } from "./components/ui/Auth/Auth";
-import Footer from "./components/ui/Footer/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AuthScreen from "./components/screens/AuthScreen";
+import ClientScreen from "./components/screens/ClientScreen";
 
 function App() {
   return (
     <>
-      <Auth />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/auth" element={<AuthScreen />} />
+          <Route path="/" element={<ClientScreen />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

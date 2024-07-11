@@ -8,7 +8,7 @@ export const Auth = () => {
         <h1 className={styles.title}>Стали Урала система обработки данных</h1>
         <h2 className={styles.pretitle}>Авторизация</h2>
         <AuthForm />
-        <img src="logo.svg" alt="" />
+        <img src="logo_big.svg" alt="" />
       </div>
     </div>
   );

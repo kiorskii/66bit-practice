@@ -1,0 +1,55 @@
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7vh;
+  border-bottom: 1px solid black;
+  padding: 0 20px;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 95px;
+}
+
+.logo {
+  img {
+    height: 4vh;
+  }
+}
+
+.auth__list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-wrap: nowrap;
+}
+
+.nav__item {
+  padding: 10px;
+
+  &:hover {
+    border-left: 2px solid rgba(247, 87, 66, 1);
+    transition: all 0.05s ease-in-out;
+
+    a {
+      color: rgba(247, 87, 66, 1);
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  a {
+    text-decoration: none;
+    color: #595959;
+  }
+}
