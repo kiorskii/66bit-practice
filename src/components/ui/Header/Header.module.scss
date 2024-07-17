@@ -33,7 +33,10 @@
 }
 
 .nav__item {
+  border-left: 2px solid transparent;
+
   padding: 10px;
+  cursor: pointer;
 
   &:hover {
     border-left: 2px solid rgba(247, 87, 66, 1);
@@ -51,5 +54,33 @@
   a {
     text-decoration: none;
     color: #595959;
+  }
+}
+
+.suppliers {
+  .nav__item:nth-child(2) {
+    border-left: 2px solid rgba(247, 87, 66, 1);
+
+    a {
+      color: rgba(247, 87, 66, 1);
+    }
+  }
+}
+.clients {
+  .nav__item:nth-child(3) {
+    border-left: 2px solid rgba(247, 87, 66, 1);
+
+    a {
+      color: rgba(247, 87, 66, 1);
+    }
+  }
+}
+.items {
+  .nav__item:nth-child(4) {
+    border-left: 2px solid rgba(247, 87, 66, 1);
+
+    a {
+      color: rgba(247, 87, 66, 1);
+    }
   }
 }

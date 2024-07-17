@@ -2,22 +2,28 @@ import styles from "./Header.module.scss";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import PersonIcon from "@mui/icons-material/Person";
 
-const Header = () => {
+const Header = ({
+  currentPage,
+  setPage,
+}: {
+  currentPage: string;
+  setPage: Function;
+}) => {
   return (
     <div className={styles.header__container}>
       <nav className={styles.nav}>
-        <ul className={styles.nav__list}>
+        <ul className={styles.nav__list + " " + styles[currentPage]}>
           <li className={styles.logo}>
             <img src="logo.png" alt="" />
           </li>
           <li className={styles.nav__item}>
-            <a href="">Поставщики</a>
+            <a onClick={() => setPage("suppliers")}>Поставщики</a>
           </li>
           <li className={styles.nav__item}>
-            <a href="">Клиенты</a>
+            <a onClick={() => setPage("clients")}>Клиенты</a>
           </li>
           <li className={styles.nav__item}>
-            <a href="">Товарные позиции</a>
+            <a onClick={() => setPage("items")}>Товарные позиции</a>
           </li>
         </ul>
       </nav>
