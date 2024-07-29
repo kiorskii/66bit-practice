@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 import styles from "./AuthForm.module.scss";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { Navigate, useNavigate } from "react-router-dom";
 
 type Inputs = {
   login: string;
@@ -20,7 +21,9 @@ const AuthForm = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const navigate = useNavigate();
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => navigate("/");
 
   return (
     <div className={styles.form}>

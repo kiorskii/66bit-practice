@@ -1,0 +1,58 @@
+.notificationMenu {
+  position: absolute;
+  top: 50px; /* Adjust this value as needed */
+  right: 10px; /* Adjust this value as needed */
+  background-color: rgba(249, 249, 249, 1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(89, 89, 89, 1);
+  z-index: 1000;
+  width: 35vw; /* Adjust this value as needed */
+  height: 35vh;
+  padding: 10px;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    max-height: 100%;
+    overflow-y: scroll;
+
+    li {
+      padding: 17px 20px 12px 23px;
+
+      background-color: rgba(241, 241, 241, 1);
+      border-radius: 20px;
+      margin-bottom: 10px;
+      width: 97%;
+
+      display: flex;
+      flex-direction: column;
+
+      button {
+        align-self: end;
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+  ul::-webkit-scrollbar {
+    position: absolute;
+    width: 6px;
+    background-color: #e1e1e1;
+    border-radius: 20px;
+  }
+
+  ul::-webkit-scrollbar-thumb {
+    background-color: #f75742;
+    border-radius: 20px;
+  }
+}

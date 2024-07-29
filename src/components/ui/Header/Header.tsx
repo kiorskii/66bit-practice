@@ -1,6 +1,8 @@
 import styles from "./Header.module.scss";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import PersonIcon from "@mui/icons-material/Person";
+import { useState } from "react";
+import NotificationMenu from "../NotificationMenu/NotificationMenu";
 
 const Header = ({
   currentPage,
@@ -9,6 +11,12 @@ const Header = ({
   currentPage: string;
   setPage: Function;
 }) => {
+  const [isNotificationMenuOpen, setNotificationMenuOpen] = useState(false);
+
+  const toggleNotificationMenu = () => {
+    setNotificationMenuOpen(!isNotificationMenuOpen);
+  };
+
   return (
     <div className={styles.header__container}>
       <nav className={styles.nav}>
@@ -16,24 +24,29 @@ const Header = ({
           <li className={styles.logo}>
             <img src="logo.png" alt="" />
           </li>
-          <li className={styles.nav__item}>
-            <a onClick={() => setPage("suppliers")}>Поставщики</a>
+          <li onClick={() => setPage("suppliers")} className={styles.nav__item}>
+            Поставщики
           </li>
-          <li className={styles.nav__item}>
-            <a onClick={() => setPage("clients")}>Клиенты</a>
+          <li onClick={() => setPage("clients")} className={styles.nav__item}>
+            Клиенты
           </li>
-          <li className={styles.nav__item}>
-            <a onClick={() => setPage("items")}>Товарные позиции</a>
+          <li onClick={() => setPage("items")} className={styles.nav__item}>
+            Товарные позиции
           </li>
         </ul>
       </nav>
       <div className={styles.header__auth}>
         <ul className={styles.auth__list}>
-          <li className={styles.notification}>
-            <NotificationsActiveIcon />
+          <li className={styles.notification} onClick={toggleNotificationMenu}>
+            {isNotificationMenuOpen ? (
+              <NotificationsActiveIcon />
+            ) : (
+              <NotificationsActiveIcon sx={{ color: "gray" }} />
+            )}
           </li>
+          {isNotificationMenuOpen && <NotificationMenu />}
           <li className={styles.profile}>
-            <PersonIcon />
+            <PersonIcon sx={{ color: "gray" }} />
             <p className={styles.name}>Name Name</p>
           </li>
         </ul>
